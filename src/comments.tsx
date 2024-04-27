@@ -1,4 +1,4 @@
-import { Datagrid, Edit, EditButton, EmailField, List, NumberField, ReferenceField, RichTextField, Show, SimpleForm, SimpleShowLayout, TextField, TextInput, required } from 'react-admin';
+import { Datagrid, Edit, EditButton, EmailField, List, NumberField, ReferenceField, RichTextField, Show, ShowButton, SimpleForm, SimpleShowLayout, TextField, TextInput, required } from 'react-admin';
 
 export const CommentList = () => {
   return (
@@ -9,6 +9,7 @@ export const CommentList = () => {
         <TextField source="name" />
         <EmailField source="email" />
         <TextField source="body" />
+        <ShowButton />
         <EditButton />
         </Datagrid>
    </List>
@@ -33,7 +34,7 @@ export const CommentShow = () => {
   return (
     <Show>
       <SimpleShowLayout>
-        <ReferenceField source="postId" link="posts" />
+        <TextField source="postId" link="posts" />
         <NumberField source="id" />
         <TextField source="name" />
         <EmailField source="email" />

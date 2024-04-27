@@ -1,10 +1,10 @@
-import { Datagrid, Edit, EditButton, List, NumberField, RichTextField, Show, ShowButton, SimpleForm, SimpleShowLayout, TextField, TextInput, required } from 'react-admin';
+import { Button, Datagrid, Edit, EditButton, Link, List, ListView, NumberField, ReferenceField, RichTextField, Show, ShowButton, SimpleForm, SimpleShowLayout, TextField, TextInput, required } from 'react-admin';
 
 export const PostList = () => {
   return (
     <List>
       <Datagrid>
-        <NumberField source="userId" />
+        <ReferenceField reference="users" source="userId" link="show" />
         <NumberField source="id" />
         <TextField source="title" />
         <TextField source="body" />
